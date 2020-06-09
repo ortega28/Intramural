@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
 import Header from './components/Header.jsx'
+import Main from './components/Main.jsx'
 
 class App extends Component {
 
@@ -42,11 +43,11 @@ class App extends Component {
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}
         />
-        {/* <Main
-            handleLoginSubmit={this.handleLoginSubmit}
-            handleRegisterSubmit={this.handleRegisterSubmit}
-            currentUser={this.state.currentUser}
-          /> */}
+        <Main
+          handleLoginSubmit={this.handleLoginSubmit}
+          handleRegisterSubmit={this.handleRegisterSubmit}
+          currentUser={this.state.currentUser}
+        />
       </div>
     )
   }

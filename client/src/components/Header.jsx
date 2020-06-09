@@ -19,11 +19,11 @@ function Header(props) {
       <hr />
       {
         // props.currentUser && (
-        <nav>
-          <NavLink to="/sports">Sports</NavLink>
-          <NavLink to="/teams">Teams</NavLink>
-        </nav>
-        // )
+        // <nav>
+        //   <NavLink to="/sports">Sports</NavLink>
+        //   <NavLink to="/teams">Teams</NavLink>
+        // </nav>
+        //  )
       }
     </div>
   )
