@@ -10,7 +10,7 @@ function Header(props) {
       {
         props.currentUser
           ?
-          <>{props.currentUser.username}<button onClick={props.handleLogout}>Logout</button></>
+          <>Hello, {props.currentUser.username}<button onClick={props.handleLogout}>Logout</button></>
           :
           // <Link to='/user/login'>Login/Signup</Link>
           <>
@@ -21,11 +21,11 @@ function Header(props) {
       <hr />
       {
         // props.currentUser && (
-        // <nav>
-        //   <NavLink to="/sports">Sports</NavLink>
-        //   <NavLink to="/teams">Teams</NavLink>
-        // </nav>
-        //  )
+        //   <nav>
+        //     <NavLink to="/sports">Sports</NavLink>
+        //     <NavLink to="/teams">Teams</NavLink>
+        //   </nav>
+        // )
       }
     </div>
   )
