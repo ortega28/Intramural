@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { loginUser, signupUser, removeToken, verifyUser } from './services/auth'
 import Header from './components/Header.jsx'
 import Main from './components/Main.jsx'
+import Footer from './components/Footer.jsx'
+
+import './App.css'
 
 class App extends Component {
 
@@ -38,7 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='entire-app'>
         <Header
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}
@@ -48,6 +51,7 @@ class App extends Component {
           handleSignupSubmit={this.handleSignupSubmit}
           currentUser={this.state.currentUser}
         />
+        <Footer />
       </div>
     )
   }

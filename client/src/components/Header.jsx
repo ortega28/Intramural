@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 function Header(props) {
   return (
-    <div>
-      <Link to='/'>
-        <h1>Intramural League</h1>
+    <div className='header-div'>
+      <Link to='/' className='header-title'>
+        <h1 >Intramural League</h1>
       </Link>
       {
         props.currentUser

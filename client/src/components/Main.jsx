@@ -10,7 +10,7 @@ import ShowTeams from './ShowTeams';
 import Sports from './Sports.jsx';
 import basketballImage from '../images/photo-1546519638-68e109498ffc.jpeg'
 import './Main.css';
-// import CreatePlayer from './CreatePlayer';
+import CreatePlayer from './CreatePlayer';
 // import UpdatePlayer from './UpdatePlayer';
 // import PlayerProfile from './PlayerProfile';
 
@@ -66,42 +66,48 @@ export default class Main extends Component {
 
   render() {
     return (
-      <>
-        <Route exact path='/'>
-          <h1>Helllllooooo World</h1>
-          <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
-          <Link to='/sports'>Check Out Our Sports</Link>
-        </Route>
-        <main>
-          <Route path='/user/login' render={(props) => (
-            <Login
-              {...props}
-              handleLoginSubmit={this.props.handleLoginSubmit}
-            />
-          )} />
-          <Route path='/user/signup' render={(props) => (
-            <Signup
-              {...props}
-              handleSignupSubmit={this.props.handleSignupSubmit}
-            />
-          )} />
-          <Route path='/players' render={() => (
-            <ShowPlayers
-              players={this.state.players}
-              currentUser={this.props.currentUser}
-              destroyPlayer={this.destroyPlayer}
-            />
-          )} />
-          <Route path='/teams' render={() => (
-            <ShowTeams
-              teams={this.state.teams}
-            />
-          )} />
-          <Route path='/sports' render={() => (
-            <Sports />
-          )} />
-        </main>
-      </>
+      <div className='main-component'>
+        <>
+          <Route exact path='/'>
+
+            <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
+            <Link to='/sports'>Check Out Our Sports</Link>
+          </Route>
+          <main>
+            <Route path='/user/login' render={(props) => (
+              <Login
+                {...props}
+                handleLoginSubmit={this.props.handleLoginSubmit}
+              />
+            )} />
+            <Route path='/user/signup' render={(props) => (
+              <Signup
+                {...props}
+                handleSignupSubmit={this.props.handleSignupSubmit}
+              />
+            )} />
+            <Route path='/players' render={() => (
+              <ShowPlayers
+                players={this.state.players}
+                currentUser={this.props.currentUser}
+                destroyPlayer={this.destroyPlayer}
+              />
+            )} />
+            <Route path='/teams' render={() => (
+              <ShowTeams
+                teams={this.state.teams}
+              />
+            )} />
+            <Route path='/sports' render={() => (
+              <Sports />
+            )} />
+
+            <Route path='/new/player' render={() => (
+              <CreatePlayer />
+            )} />
+          </main>
+        </>
+      </div>
     )
   }
 }
