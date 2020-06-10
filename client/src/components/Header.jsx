@@ -20,7 +20,7 @@ function Header(props) {
             <Link to='/user/signup'>Sign Up</Link>
           </>
       }
-      <hr />
+      {/* <hr /> */}
       {
         // props.currentUser && (
         //   <nav>
