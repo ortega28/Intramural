@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Register extends Component {
+export default class Signup extends Component {
   state = {
     username: "",
     email: "",
@@ -16,11 +16,11 @@ export default class Register extends Component {
 
   render() {
     const { username, email, password } = this.state;
-    const { handleRegisterSubmit, history } = this.props;
+    const { handleSignupSubmit, history } = this.props;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        handleRegisterSubmit(this.state);
+        handleSignupSubmit(this.state);
         history.push('/');
         this.setState({
           username: "",
@@ -28,7 +28,7 @@ export default class Register extends Component {
           password: ""
         })
       }}>
-        <h3>Register</h3>
+        <h3>Sign Up</h3>
         <label htmlFor="username">username:
           <input
             id="username"

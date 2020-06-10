@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
-// import Register from './Register';
+// import Signup from './Signup';
 // //import { getAllFlavors } from '../services/flavors';
 // import { getAllFoods, createFood, deleteFood, updateFood } from '../services/foods';
 // import ShowFlavors from './ShowFlavors';

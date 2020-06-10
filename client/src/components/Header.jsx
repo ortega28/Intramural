@@ -4,13 +4,15 @@ import { Link, NavLink } from 'react-router-dom';
 function Header(props) {
   return (
     <div>
-      <h1>Intramural League</h1>
+      <Link to='/'>
+        <h1>Intramural League</h1>
+      </Link>
       {
         props.currentUser
           ?
           <>{props.currentUser.username}<button onClick={props.handleLogout}>Logout</button></>
           :
-          // <Link to='/user/login'>Login/Register</Link>
+          // <Link to='/user/login'>Login/Signup</Link>
           <>
             <Link to='/user/login'>Login</Link>
             <Link to='/user/signup'>Sign Up</Link>

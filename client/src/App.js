@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
+import { loginUser, signupUser, removeToken, verifyUser } from './services/auth'
 import Header from './components/Header.jsx'
 import Main from './components/Main.jsx'
 
@@ -18,8 +18,8 @@ class App extends Component {
     this.setState({ currentUser });
   }
 
-  handleRegisterSubmit = async (registerData) => {
-    const currentUser = await registerUser(registerData);
+  handleSignupSubmit = async (signupData) => {
+    const currentUser = await signupUser(signupData);
     this.setState({ currentUser });
   }
 
@@ -45,7 +45,7 @@ class App extends Component {
         />
         <Main
           handleLoginSubmit={this.handleLoginSubmit}
-          handleRegisterSubmit={this.handleRegisterSubmit}
+          handleSignupSubmit={this.handleSignupSubmit}
           currentUser={this.state.currentUser}
         />
       </div>
