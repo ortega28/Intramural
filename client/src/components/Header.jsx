@@ -15,6 +15,7 @@ function Header(props) {
           // <Link to='/user/login'>Login/Signup</Link>
           <>
             <Link to='/user/login'>Login</Link>
+            <span>  </span>
             <Link to='/user/signup'>Sign Up</Link>
           </>
       }

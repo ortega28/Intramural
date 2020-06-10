@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 //import Sports from './Sports.jsx';
@@ -10,9 +10,9 @@ import ShowTeams from './ShowTeams';
 import Sports from './Sports.jsx';
 import basketballImage from '../images/photo-1546519638-68e109498ffc.jpeg'
 import './Main.css';
-// import CreateFood from './CreateFood';
-// import UpdateFood from './UpdateFood';
-// import FoodItem from './FoodItem';
+// import CreatePlayer from './CreatePlayer';
+// import UpdatePlayer from './UpdatePlayer';
+// import PlayerProfile from './PlayerProfile';
 
 export default class Main extends Component {
   state = {
@@ -67,8 +67,11 @@ export default class Main extends Component {
   render() {
     return (
       <>
-        <h1>Helllllooooo World</h1>
-        <img src={basketballImage} alt="Basketball Image" className="home-basketball-image" />
+        <Route exact path='/'>
+          <h1>Helllllooooo World</h1>
+          <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
+          <Link to='/sports'>Check Out Our Sports</Link>
+        </Route>
         <main>
           <Route path='/user/login' render={(props) => (
             <Login
