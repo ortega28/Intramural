@@ -71,7 +71,7 @@ export default class Main extends Component {
           <Route exact path='/'>
 
             <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
-            <Link to='/sports'>Check Out Our Sports</Link>
+            <Link to='/sports' className='link-to-sports'>Check Out Our Sports</Link>
           </Route>
           <main>
             <Route path='/user/login' render={(props) => (

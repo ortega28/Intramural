@@ -1,8 +1,29 @@
 .home-basketball-image{
   height:300px;
   width:400px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main-component {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(225, 225, 225);
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+  justify-content: center;
+  
+}
+
+.link-to-sports {
+  text-decoration: none;
+  text-align: center;
+  font-size: x-large;
+  color: black;
+  margin-right: 0%;
+}
+
+.link-to-sports:hover {
+  text-decoration: underline;
 }

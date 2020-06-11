@@ -6,6 +6,17 @@
   background-color: rgb(48, 80, 142);
 }
 
+.header-logout-button {
+  margin-left: 15px;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  border: rgb(48, 80, 142);
+}
+
+.header-logout-button:hover {
+  background-color: salmon;
+}
+
 .header-title {
   text-decoration: none;
   color: black;

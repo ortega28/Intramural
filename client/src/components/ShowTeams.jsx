@@ -5,7 +5,7 @@ export default function ShowTeams(props) {
   const { teams } = props;
   return (
     <>
-      <hr />
+      {/* <hr /> */}
       <h3>Teams</h3>
 
       {

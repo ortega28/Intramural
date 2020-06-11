@@ -1,9 +1,60 @@
 .sports-basketball-image{
-  height:200px;
-  width:300px;
+  height:300px;
+  width:400px;
+  margin-bottom: 5vh;
+  border-radius: 6px;
 }
 
 .sports-soccer-image{
-  height:200px;
-  width:300px;
+  height:300px;
+  width:400px;
+  margin-bottom: 5vh;
+  border-radius: 6px;
+}
+
+.sports-main-div {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(225, 225, 225);
+  margin-top: 0vh;
+  margin-bottom: 0vh;
+  justify-content: center;
+}
+
+.sports-basketball-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 8vw;
+}
+
+.sports-basketball-link {
+  text-decoration: none;
+  color: black;
+  width: 30px;
+  margin-left: 40%;
+}
+
+.sports-basketball-link:hover {
+  /* text-decoration: underline; */
+  font-size: large;
+}
+
+.sports-soccer-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 8vw;
+}
+
+.sports-soccer-link {
+  text-decoration: none;
+  color: black;
+  width: 30px;
+  margin-left: 45%;
+}
+
+.sports-soccer-link:hover {
+  /* text-decoration: underline; */
+  font-size: large;
 }

@@ -6,12 +6,16 @@ import './Sports.css'
 
 function Sports() {
   return (
-    <>
-      <img src={basketballImage} alt="Basketball" className='sports-basketball-image' />
-      <Link to='/teams'>Basketball</Link>
-      <img src={soccerImage} alt="Soccer" className='sports-soccer-image' />
-      <Link to='/soccer'>Soccer</Link>
-    </>
+    <div className='sports-main-div'>
+      <div className='sports-basketball-div'>
+        <img src={basketballImage} alt="Basketball" className='sports-basketball-image' />
+        <Link to='/teams' className='sports-basketball-link'>Basketball</Link>
+      </div>
+      <div className='sports-soccer-div'>
+        <img src={soccerImage} alt="Soccer" className='sports-soccer-image' />
+        <Link to='/soccer' className='sports-soccer-link'>Soccer</Link>
+      </div>
+    </div>
   )
 }
 
