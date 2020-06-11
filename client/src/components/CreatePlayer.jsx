@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CreatePlayer.css'
 
 export default class CreateFood extends Component {
   state = {
@@ -31,38 +32,52 @@ export default class CreateFood extends Component {
           // jersey: ""
         })
       }}>
-        <hr />
-        <h3>Create Player</h3>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="id"
-          type="text"
-          value={name}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="height">Height:</label>
-        <input
-          id="id"
-          type="text"
-          value={height}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="sex">Sex:</label>
-        <input
-          id="id"
-          type="text"
-          value={sex}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="jersey">Jersey #:</label>
-        <input
-          id="id"
-          type="text"
-          value={jersey}
-          onChange={this.handleChange}
-        />
-        <button>Submit</button>
-      </form>
+        {/* <hr /> */}
+        <div className='create-player-div'>
+          <h2 className='create-player-title'>Create Player</h2>
+          <div >
+            <label htmlFor="name">Name:</label>
+            <input
+              id="id"
+              type="text"
+              value={name}
+              onChange={this.handleChange}
+              className='name-field'
+            />
+          </div>
+          <div >
+            <label htmlFor="height">Height:</label>
+            <input
+              id="id"
+              type="text"
+              value={height}
+              onChange={this.handleChange}
+              className='height-field'
+            />
+          </div>
+          <div className='sex-field'>
+            <label htmlFor="sex">Sex:</label>
+            <input
+              id="id"
+              type="text"
+              value={sex}
+              onChange={this.handleChange}
+              className='sex-field'
+            />
+          </div>
+          <div >
+            <label htmlFor="jersey">Jersey #:</label>
+            <input
+              id="id"
+              type="text"
+              value={jersey}
+              onChange={this.handleChange}
+              className='jersey-field'
+            />
+          </div>
+          <button className='create-player-submit-button'>Submit</button>
+        </div>
+      </form >
     )
   }
 }
