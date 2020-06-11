@@ -11,7 +11,8 @@ import Sports from './Sports.jsx';
 import basketballImage from '../images/photo-1505666287802-931dc83948e9.jpeg'
 import './Main.css';
 import CreatePlayer from './CreatePlayer';
-// import UpdatePlayer from './UpdatePlayer';
+import EditPlayer from './EditPlayer';
+import Player from './ShowPlayer.jsx'
 // import PlayerProfile from './PlayerProfile';
 
 export default class Main extends Component {
@@ -105,6 +106,32 @@ export default class Main extends Component {
             <Route path='/new/player' render={() => (
               <CreatePlayer />
             )} />
+            <Route path='/player/:id/edit' render={(props) => {
+              // instead of implicitly returning righ away,
+              // we are going to first grab the id of the food we want to update.
+              // Then we are using the .find method to pull that food object
+              // from our foods array in state. We can pass the whole food obj
+              // to our UpdateFood component through props.
+              const playerId = props.match.params.id;
+              const player = this.state.players.find(player => player.id === parseInt(playerId));
+              return <EditPlayer
+                {...props}
+                player={player}
+                putPlayer={this.putPlayer}
+              />
+            }} />
+            <Route exact path='/player/:id' render={(props) => {
+              // similar to edit, we will grab the foodId 
+              // from match.params. This time, we will
+              // get the food from the backend with an
+              // api call in order to get the associated
+              // flavors
+              const playerId = props.match.params.id;
+              return <Player
+                playerId={playerId}
+                currentUser={this.props.currentUser}
+              />
+            }} />
           </main>
         </>
       </div>
