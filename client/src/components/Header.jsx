@@ -14,13 +14,14 @@ function Header(props) {
         {
           props.currentUser
             ?
-            <>Hello, {props.currentUser.username}<button onClick={props.handleLogout} className='header-logout-button'>Logout</button></>
+            // <>Hello, {props.currentUser.username}<button onClick={props.handleLogout} className='header-logout-button'>Logout</button></>
+            <div className='header-greeting'>Hello, {props.currentUser.username}<button onClick={props.handleLogout} className='header-logout-button'>Logout</button></div>
             :
             // <Link to='/user/login'>Login/Signup</Link>
             <>
-              <Link to='/user/login'>Login</Link>
+              <Link to='/user/login' className='header-login-button'>Login</Link>
               <span>  </span>
-              <Link to='/user/signup'>Sign Up</Link>
+              <Link to='/user/signup' className='header-signup-button'>Sign Up</Link>
             </>
         }
         {/* <hr /> */}

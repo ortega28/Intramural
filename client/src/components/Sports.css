@@ -1,15 +1,17 @@
 .sports-basketball-image{
   height:300px;
-  width:400px;
+  width:450px;
   margin-bottom: 5vh;
-  border-radius: 6px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .sports-soccer-image{
   height:300px;
-  width:400px;
+  width:450px;
   margin-bottom: 5vh;
-  border-radius: 6px;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 
 .sports-main-div {
@@ -32,12 +34,14 @@
   text-decoration: none;
   color: black;
   width: 30px;
-  margin-left: 40%;
+  margin-left: 35%;
+  font-size: 30px;
+  transition: ease-out .1s;
 }
 
 .sports-basketball-link:hover {
-  /* text-decoration: underline; */
-  font-size: large;
+  transition: ease-in .1s;
+  transform: scale(1.2);
 }
 
 .sports-soccer-div {
@@ -51,10 +55,12 @@
   text-decoration: none;
   color: black;
   width: 30px;
-  margin-left: 45%;
+  margin-left: 40%;
+  font-size: 30px;
+  transition: ease-out .1s;
 }
 
 .sports-soccer-link:hover {
-  /* text-decoration: underline; */
-  font-size: large;
+  transition: ease-in .1s;
+  transform: scale(1.2);
 }

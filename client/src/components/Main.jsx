@@ -8,7 +8,7 @@ import { getAllTeams } from '../services/teams';
 import ShowPlayers from './ShowPlayers';
 import ShowTeams from './ShowTeams';
 import Sports from './Sports.jsx';
-import basketballImage from '../images/photo-1546519638-68e109498ffc.jpeg'
+import basketballImage from '../images/photo-1505666287802-931dc83948e9.jpeg'
 import './Main.css';
 import CreatePlayer from './CreatePlayer';
 // import UpdatePlayer from './UpdatePlayer';

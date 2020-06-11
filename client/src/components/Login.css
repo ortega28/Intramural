@@ -1,0 +1,56 @@
+.login-div {
+  background-color: rgb(248,248,255);
+  text-align: center;
+  margin-left: 30vw;
+  margin-right: 30vw;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  border: 1px solid black;
+}
+
+.login-form-title{
+  font-size: 35px;
+  margin-top: 0px;
+}
+
+.login-signup-link {
+  text-decoration: none;
+  color: black;
+}
+
+.login-buttons-div {
+  margin-top: 20px;
+}
+
+.login-username-field {
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+.login-password-field {
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+.login-signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-submit-button {
+  font-size: large;
+  background: white;
+  margin-left: 5px;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+.login-submit-button:hover {
+  background-color: salmon;
+  opacity: 1;
+}

@@ -4,6 +4,8 @@
   justify-content: space-around;
   flex-wrap:  wrap;
   background-color: rgb(48, 80, 142);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .header-logout-button {
@@ -11,16 +13,47 @@
   padding: 10px 15px 10px 15px;
   border-radius: 5px;
   border: rgb(48, 80, 142);
+  font-size: large;
+  opacity: 0.9;
+  transition: 0.4s;
 }
 
 .header-logout-button:hover {
   background-color: salmon;
+  opacity: 1;
 }
 
 .header-title {
+  
+  color: rgb(248,248,255);
   text-decoration: none;
-  color: black;
+  
+  
 }
 h1:hover{
+  text-decoration: underline;
+  
+}
+
+.header-greeting {
+  color: rgb(248,248,255);
+  font-size: large;
+}
+
+.header-login-button {
+  text-decoration: none;
+  color: rgb(248,248,255);
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.header-signup-button {
+  text-decoration: none;
+  color: rgb(248,248,255);
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.header-login-button:hover, .header-signup-button:hover {
   text-decoration: underline;
 }
