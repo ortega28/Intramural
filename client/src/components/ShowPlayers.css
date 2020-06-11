@@ -1,0 +1,69 @@
+.players-title {
+  margin-left: 20px;
+  font-size: 50px;
+}
+.player-name {
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  transition: ease-out .1s;
+  font-size: 30px;
+}
+
+.player-name:hover {
+  color:salmon;
+  transition: ease-in .1s;
+  transform: scale(1.2);
+}
+
+.edit-delete-button-div {
+margin-left: 20px;
+margin-top: 10px;
+}
+
+.show-players-edit-button {
+  font-size: large;
+  background: white;
+  margin-left: 5px;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+.show-players-edit-button:hover {
+  background-color: salmon;
+  opacity: 1;
+}
+
+
+.show-players-delete-button{
+  font-size: large;
+  background: white;
+  margin-left: 5px;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+.show-players-delete-button:hover {
+  background-color: salmon;
+  opacity: 1;
+}
+
+.create-button {
+  margin-left: 30px;
+  font-size: large;
+  background: white;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  opacity: 0.9;
+  transition: 0.4s;
+}
+
+.create-button:hover {
+  background-color: lightgreen;
+  opacity: 1;
+}
+

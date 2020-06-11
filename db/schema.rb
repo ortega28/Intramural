@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 2020_06_11_153032) do
     t.integer "height"
     t.string "sex"
     t.integer "jersey"
+    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.index ["team_id"], name: "index_players_on_team_id"
     t.index ["user_id"], name: "index_players_on_user_id"
   end
 
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_153032) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "players", "teams"
   add_foreign_key "players", "users"
   add_foreign_key "teams", "users"
 end

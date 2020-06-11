@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_secure_password
 
@@ -7,4 +9,5 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
 
   has_many :teams
+  has_many :players
 end

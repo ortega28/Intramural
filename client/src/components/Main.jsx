@@ -75,18 +75,21 @@ export default class Main extends Component {
             <Link to='/sports' className='link-to-sports'>Check Out Our Sports</Link>
           </Route>
           <main>
+
             <Route path='/user/login' render={(props) => (
               <Login
                 {...props}
                 handleLoginSubmit={this.props.handleLoginSubmit}
               />
             )} />
+
             <Route path='/user/signup' render={(props) => (
               <Signup
                 {...props}
                 handleSignupSubmit={this.props.handleSignupSubmit}
               />
             )} />
+
             <Route path='/players' render={() => (
               <ShowPlayers
                 players={this.state.players}
@@ -94,24 +97,24 @@ export default class Main extends Component {
                 destroyPlayer={this.destroyPlayer}
               />
             )} />
+
             <Route path='/teams' render={() => (
               <ShowTeams
                 teams={this.state.teams}
               />
             )} />
+
             <Route path='/sports' render={() => (
               <Sports />
             )} />
 
-            <Route path='/new/player' render={() => (
-              <CreatePlayer />
+            <Route path='/new/player' render={(props) => (
+              <CreatePlayer
+                {...props}
+                postPlayer={this.postPlayer} />
             )} />
+
             <Route path='/player/:id/edit' render={(props) => {
-              // instead of implicitly returning righ away,
-              // we are going to first grab the id of the food we want to update.
-              // Then we are using the .find method to pull that food object
-              // from our foods array in state. We can pass the whole food obj
-              // to our UpdateFood component through props.
               const playerId = props.match.params.id;
               const player = this.state.players.find(player => player.id === parseInt(playerId));
               return <EditPlayer
@@ -120,12 +123,8 @@ export default class Main extends Component {
                 putPlayer={this.putPlayer}
               />
             }} />
+
             <Route exact path='/player/:id' render={(props) => {
-              // similar to edit, we will grab the foodId 
-              // from match.params. This time, we will
-              // get the food from the backend with an
-              // api call in order to get the associated
-              // flavors
               const playerId = props.match.params.id;
               return <Player
                 playerId={playerId}

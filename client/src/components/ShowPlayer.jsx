@@ -28,11 +28,10 @@ export default class Player extends Component {
           player && (
             <>
               <h1>Name: {player.name}</h1>
-              <h3>Height: {player.height}</h3>
+              <h3>Height: {player.height} inches</h3>
               <h3>Sex: {player.sex}</h3>
               <h3>Jersey #: {player.jersey}</h3>
-                )
-              }
+
             </>
           )
         }

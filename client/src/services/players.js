@@ -25,7 +25,3 @@ export const deletePlayer = async (id) => {
   return resp
 }
 
-// export const foodToFlavor = async (flavorId, foodId) => {
-//   const resp = await api.get(`/flavors/${flavorId}/players/${foodId}`);
-//   return resp.data;
-// }

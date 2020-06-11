@@ -7,7 +7,7 @@ function Header(props) {
     <div className='header-div'>
       <div>
         <Link to='/' className='header-title'>
-          <h1 >Intramural League</h1>
+          <h1 className='h1-title'>Intramural League</h1>
         </Link>
       </div>
       <div>

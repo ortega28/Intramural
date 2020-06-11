@@ -29,7 +29,7 @@
   transition: ease-out .1s;
 }
 
-h1:hover{
+.h1-title:hover{
   transition: ease-in .1s;
   transform: scale(1.2);
 }

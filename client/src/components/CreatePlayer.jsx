@@ -4,16 +4,18 @@ import './CreatePlayer.css'
 export default class CreateFood extends Component {
   state = {
     name: "",
-    // height: "",
-    // sex: "",
-    // jersey: ""
+    height: "",
+    sex: "",
+    jersey: ""
   }
 
   handleChange = (e) => {
-    const { value, } = e.target;
+    const { value, hvalue, svalue, jvalue } = e.target;
     this.setState({
       name: value,
-      // height: value
+      height: hvalue,
+      sex: svalue,
+      jersey: jvalue
     })
   }
 
