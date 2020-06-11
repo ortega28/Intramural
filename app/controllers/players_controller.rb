@@ -5,9 +5,10 @@ class PlayersController < ApplicationController
 
   # GET /players
   def index
-    @players = Player.all
+    @team = Team.find(params[:team_id])
+    @players = @team.players
 
-    render json: @players
+    render json: @players, include: :team, status: :ok
   end
 
   # GET /players/1

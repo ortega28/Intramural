@@ -13,7 +13,7 @@ export default function ShowTeams(props) {
         teams.map(team => (
           // <p key={team.id}>{team.name}</p>
           <div className='team-name-div'>
-            <Link to='/players' key={team.id} className='show-teams-team-name'>{team.name}</Link>
+            <Link to={`/teams/${team.id}/players`} key={team.id} className='show-teams-team-name'>{team.name}</Link>
           </div>
         ))
       }

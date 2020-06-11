@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './CreatePlayer.css'
 
-export default class CreateFood extends Component {
+export default class CreatePlayer extends Component {
   state = {
     name: "",
     height: "",
@@ -10,12 +10,11 @@ export default class CreateFood extends Component {
   }
 
   handleChange = (e) => {
-    const { value, hvalue, svalue, jvalue } = e.target;
+
+    const { name, value } = e.target;
+    console.log(name)
     this.setState({
-      name: value,
-      height: hvalue,
-      sex: svalue,
-      jersey: jvalue
+      [name]: value
     })
   }
 
@@ -42,6 +41,7 @@ export default class CreateFood extends Component {
             <input
               id="id"
               type="text"
+              name='name'
               value={name}
               onChange={this.handleChange}
               className='name-field'
@@ -52,6 +52,7 @@ export default class CreateFood extends Component {
             <input
               id="id"
               type="text"
+              name="height"
               value={height}
               onChange={this.handleChange}
               className='height-field'
@@ -62,6 +63,7 @@ export default class CreateFood extends Component {
             <input
               id="id"
               type="text"
+              name='sex'
               value={sex}
               onChange={this.handleChange}
               className='sex-field'
@@ -72,6 +74,7 @@ export default class CreateFood extends Component {
             <input
               id="id"
               type="text"
+              name='jersey'
               value={jersey}
               onChange={this.handleChange}
               className='jersey-field'

@@ -1,10 +1,17 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './ShowPlayers.css'
 
 export default function ShowPlayers(props) {
-  const { players, currentUser, destroyPlayer, history } = props;
+  const { players, currentUser, destroyPlayer, getPlayers, history } = props;
+
+  const { team_id } = useParams()
+  useEffect(() => {
+    getPlayers(team_id)
+  }, [])
+
+
   return (
     <>
       <hr />
@@ -14,7 +21,7 @@ export default function ShowPlayers(props) {
           <React.Fragment key={player.id}>
             {/* <div> */}
             {/* small change:  we made the p tags into links to the player item route */}
-            <Link to={`/player/${player.id}`} className='player-name'>{player.name}</Link>
+            <Link to={`/teams/${player.team_id}/players/`} className='player-name'>{player.name}</Link>
             {
               currentUser && currentUser.id === player.user_id && (
                 <div className='edit-delete-button-div'>

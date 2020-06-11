@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 //import Sports from './Sports.jsx';
@@ -22,16 +22,18 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    this.getPlayers();
     this.getTeams();
+    this.getPlayers();
+
   }
 
   // ============================
   // ========== Players =========
   // ============================
 
-  getPlayers = async () => {
-    const players = await getAllPlayers();
+  getPlayers = async (teamId) => {
+    const players = await getAllPlayers(teamId);
+    console.log(players)
     this.setState({ players });
   }
 
@@ -66,72 +68,77 @@ export default class Main extends Component {
 
 
   render() {
+    console.log(this.state.players)
     return (
       <div className='main-component'>
         <>
-          <Route exact path='/'>
+          <Switch >
+            <Route exact path='/'>
 
-            <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
-            <Link to='/sports' className='link-to-sports'>Check Out Our Sports</Link>
-          </Route>
-          <main>
+              <img src={basketballImage} alt="Basketball" className="home-basketball-image" />
+              <Link to='/sports' className='link-to-sports'>Check Out Our Sports</Link>
+            </Route>
+            <main>
 
-            <Route path='/user/login' render={(props) => (
-              <Login
-                {...props}
-                handleLoginSubmit={this.props.handleLoginSubmit}
-              />
-            )} />
+              <Route path='/user/login' render={(props) => (
+                <Login
+                  {...props}
+                  handleLoginSubmit={this.props.handleLoginSubmit}
+                />
+              )} />
 
-            <Route path='/user/signup' render={(props) => (
-              <Signup
-                {...props}
-                handleSignupSubmit={this.props.handleSignupSubmit}
-              />
-            )} />
+              <Route path='/user/signup' render={(props) => (
+                <Signup
+                  {...props}
+                  handleSignupSubmit={this.props.handleSignupSubmit}
+                />
+              )} />
 
-            <Route path='/players' render={() => (
-              <ShowPlayers
-                players={this.state.players}
-                currentUser={this.props.currentUser}
-                destroyPlayer={this.destroyPlayer}
-              />
-            )} />
+              <Route path='/teams/:team_id/players' render={() => (
+                <ShowPlayers
+                  players={this.state.players}
+                  currentUser={this.props.currentUser}
+                  destroyPlayer={this.destroyPlayer}
+                  getPlayers={this.getPlayers}
+                />
+              )} />
 
-            <Route path='/teams' render={() => (
-              <ShowTeams
-                teams={this.state.teams}
-              />
-            )} />
+              <Route exact path='/teams' render={() => (
+                <ShowTeams
+                  teams={this.state.teams}
+                />
+              )} />
 
-            <Route path='/sports' render={() => (
-              <Sports />
-            )} />
+              <Route path='/sports' render={() => (
+                <Sports />
+              )} />
 
-            <Route path='/new/player' render={(props) => (
-              <CreatePlayer
-                {...props}
-                postPlayer={this.postPlayer} />
-            )} />
+              <Route path='/new/player' render={(props) => (
+                <CreatePlayer
+                  {...props}
+                  postPlayer={this.postPlayer} />
+              )} />
 
-            <Route path='/player/:id/edit' render={(props) => {
-              const playerId = props.match.params.id;
-              const player = this.state.players.find(player => player.id === parseInt(playerId));
-              return <EditPlayer
-                {...props}
-                player={player}
-                putPlayer={this.putPlayer}
-              />
-            }} />
+              <Route path='/player/:id/edit' render={(props) => {
+                const playerId = props.match.params.id;
+                const player = this.state.players.find(player => player.id === parseInt(playerId));
+                return <EditPlayer
+                  {...props}
+                  player={player}
+                  putPlayer={this.putPlayer}
+                />
+              }} />
 
-            <Route exact path='/player/:id' render={(props) => {
-              const playerId = props.match.params.id;
-              return <Player
-                playerId={playerId}
-                currentUser={this.props.currentUser}
-              />
-            }} />
-          </main>
+              <Route exact path='/player/:id' render={(props) => {
+                const playerId = props.match.params.id;
+                return <Player
+                  playerId={playerId}
+                  currentUser={this.props.currentUser}
+                />
+              }} />
+
+            </main>
+          </Switch>
         </>
       </div>
     )
