@@ -26,9 +26,11 @@
 .header-title {
   color: rgb(248,248,255);
   text-decoration: none;
-  transition: ease-out .1s;
+  transition: ease-out .2s;
 }
-
+.h1-title{
+  transition: ease-out .2s;
+}
 .h1-title:hover{
   transition: ease-in .1s;
   transform: scale(1.2);
