@@ -22,11 +22,19 @@ User.destroy_all
 @alex = Player.create!(user: @user, team: @team1, name: 'Alex', height: 73, sex: 'Male', jersey: 28)
 @raf = Player.create!(user: @user, team: @team1, name: 'Raf', height: 71, sex: 'Male', jersey: 9)
 @andrew = Player.create!(user: @user, team: @team1, name: 'Andrew', height: 72, sex: 'Male', jersey: 2)
+@sarah = Player.create!(user: @user, team: @team1, name: 'Sarah', height: 66, sex: 'Female', jersey: 5)
+@brett = Player.create!(user: @user, team: @team1, name: 'Brett', height: 73, sex: 'Male', jersey: 29)
+@anthony = Player.create!(user: @user, team: @team1, name: 'Anthony', height: 71, sex: 'Male', jersey: 10)
+@kyle = Player.create!(user: @user, team: @team1, name: 'Kyle', height: 72, sex: 'Male', jersey: 2)
 
 @elizabeth = Player.create!(user: @user, team: @team2, name: 'Elizabeth', height: 66, sex: 'Female', jersey: 13)
 @dan = Player.create!(user: @user, team: @team2, name: 'Dan', height: 73, sex: 'Male', jersey: 14)
 @trish = Player.create!(user: @user, team: @team2, name: 'Trish', height: 71, sex: 'Male', jersey: 15)
 @chris = Player.create!(user: @user, team: @team2, name: 'Chris', height: 72, sex: 'Male', jersey: 16)
+@kelsey = Player.create!(user: @user, team: @team2, name: 'Kelsey', height: 66, sex: 'Female', jersey: 17)
+@fred = Player.create!(user: @user, team: @team2, name: 'Fred', height: 73, sex: 'Male', jersey: 18)
+@lily = Player.create!(user: @user, team: @team2, name: 'Lily', height: 71, sex: 'Male', jersey: 19)
+@alec = Player.create!(user: @user, team: @team2, name: 'Alec', height: 72, sex: 'Male', jersey: 20)
 
 # Team.create!(name: 'Team 1', user: @user, players: [@victoria, @alex, @raf, @andrew])
 
