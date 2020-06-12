@@ -9,11 +9,15 @@ function Sports() {
     <div className='sports-main-div'>
       <div className='sports-basketball-div'>
         <img src={basketballImage} alt="Basketball" className='sports-basketball-image' />
-        <Link to='/teams' className='sports-basketball-link'>Basketball</Link>
+        <Link to={{
+          pathname: '/teams', state: { type: 'basketball' }
+        }} className='sports-basketball-link'>Basketball</Link>
       </div>
       <div className='sports-soccer-div'>
         <img src={soccerImage} alt="Soccer" className='sports-soccer-image' />
-        <Link to='/teams' className='sports-soccer-link'>Soccer</Link>
+        <Link to={{
+          pathname: '/teams', state: { type: 'soccer' }
+        }} className='sports-soccer-link'>Soccer</Link>
       </div>
     </div>
   )

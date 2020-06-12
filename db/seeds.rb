@@ -15,8 +15,8 @@ Player.destroy_all
 User.destroy_all
 
 @user = User.create!(username: 'Alex', email: 'alex@gmail.com', password: '123456')
-@team1 = Team.create!(name: 'Team 1', user: @user)
-@team2 = Team.create!(name: 'Team 2', user: @user)
+@team1 = Team.create!(name: 'Team 1', user: @user, sport_type: 'basketball')
+@team2 = Team.create!(name: 'Team 2', user: @user, sport_type: 'soccer')
 
 @victoria = Player.create!(user: @user, team: @team1, name: 'Victoria', height: 66, sex: 'Female', jersey: 4)
 @alex = Player.create!(user: @user, team: @team1, name: 'Alex', height: 73, sex: 'Male', jersey: 28)

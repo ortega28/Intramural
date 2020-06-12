@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, length: { minimum: 6 }
 
-  has_many :teams
-  has_many :players
+  has_many :teams, dependent: :destroy
+  has_many :players, dependent: :destroy
 end

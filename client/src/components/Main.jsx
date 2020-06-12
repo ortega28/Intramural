@@ -104,9 +104,10 @@ export default class Main extends Component {
                 />
               )} />
 
-              <Route exact path='/teams' render={() => (
+              <Route exact path='/teams' render={(match) => (
                 <ShowTeams
                   teams={this.state.teams}
+                  match={match}
                 />
               )} />
 
