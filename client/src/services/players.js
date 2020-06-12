@@ -6,22 +6,22 @@ export const getAllPlayers = async (teamId) => {
 }
 
 export const getOnePlayer = async (id) => {
-  const resp = await api.get(`/team/:id/players/${id}`);
+  const resp = await api.get(`/teams/:id/players/${id}`);
   return resp.data;
 }
 
-export const createPlayer = async (playerData) => {
-  const resp = await api.post('/players', { player: playerData });
+export const createPlayer = async (teamId, playerData) => {
+  const resp = await api.post(`/teams/${teamId}/players`, { player: playerData });
   return resp.data;
 }
 
-export const updatePlayer = async (id, playerData) => {
-  const resp = await api.put(`/players/${id}`, { player: playerData });
+export const updatePlayer = async (id, playerData, teamId) => {
+  const resp = await api.put(`/teams/${teamId}/players/${id}`, { player: playerData });
   return resp.data;
 }
 
-export const deletePlayer = async (id) => {
-  const resp = await api.delete(`/players/${id}`);
+export const deletePlayer = async (id, teamId) => {
+  const resp = await api.delete(`/teams/${teamId}/players/${id}`);
   return resp
 }
 

@@ -2,10 +2,11 @@
 
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[show update destroy]
+  before_action :set_team, except: %i[show update destroy]
+  before_action :authorize_request, only: %i[create update destroy]
 
   # GET /players
   def index
-    @team = Team.find(params[:team_id])
     @players = @team.players
 
     render json: @players, include: :team, status: :ok
@@ -19,6 +20,8 @@ class PlayersController < ApplicationController
   # POST /players
   def create
     @player = Player.new(player_params)
+    @player.team = @team
+    @player.user = @current_user
 
     if @player.save
       render json: @player, status: :created
@@ -51,5 +54,9 @@ class PlayersController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def player_params
     params.require(:player).permit(:name, :user_id, :height, :sex, :jersey)
+  end
+
+  def set_team
+    @team = Team.find(params[:team_id])
   end
 end

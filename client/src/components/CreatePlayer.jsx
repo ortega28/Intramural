@@ -6,7 +6,8 @@ export default class CreatePlayer extends Component {
     name: "",
     height: "",
     sex: "",
-    jersey: ""
+    jersey: "",
+    team: ""
   }
 
   handleChange = (e) => {
@@ -18,20 +19,24 @@ export default class CreatePlayer extends Component {
     })
   }
 
+  componentDidUpdate() {
+    if (!this.state.team && this.props.teams.length) {
+      this.setState({
+        team: this.props.teams[0].id
+      })
+    }
+  }
+
   render() {
     const { name, height, sex, jersey } = this.state;
     const { postPlayer, history } = this.props;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        postPlayer(this.state);
-        history.push('/players');
-        this.setState({
-          name: "",
-          // height: "",
-          // sex: "",
-          // jersey: ""
-        })
+        const { team, ...playerData } = this.state
+        postPlayer(team, playerData);
+        history.push(`/teams/${team}/players`);
+
       }}>
         {/* <hr /> */}
         <div className='create-player-div'>
@@ -51,7 +56,7 @@ export default class CreatePlayer extends Component {
             <label htmlFor="height">Height:</label>
             <input
               id="id"
-              type="text"
+              type="number"
               name="height"
               value={height}
               onChange={this.handleChange}
@@ -73,12 +78,29 @@ export default class CreatePlayer extends Component {
             <label htmlFor="jersey">Jersey #:</label>
             <input
               id="id"
-              type="text"
+              type="number"
               name='jersey'
               value={jersey}
               onChange={this.handleChange}
               className='jersey-field'
             />
+          </div>
+          <div >
+            <label htmlFor="team">Team #:</label>
+            <select
+              id="id"
+              name='team'
+              onChange={this.handleChange}
+              className='team-field'
+            >
+              {
+                this.props.teams.map(team => (
+                  <option value={team.id}>
+                    {team.id}
+                  </option>
+                ))
+              }
+            </select>
           </div>
           <button className='create-player-submit-button'>Submit</button>
         </div>

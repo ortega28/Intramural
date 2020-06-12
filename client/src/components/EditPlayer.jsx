@@ -30,73 +30,93 @@ export default class EditPlayer extends Component {
 
   // setFoodForm just grabs the food passed from props and sets state
   setPlayerForm = () => {
-    const { name } = this.props.player;
-    this.setState({ name })
+    const { name, height, sex, jersey, team_id: team } = this.props.player;
+    this.setState({ name, height, sex, jersey, team })
   }
 
   handleChange = (e) => {
-    const { value } = e.target;
+
+    const { name, value } = e.target;
+    console.log(name)
     this.setState({
-      name: value,
-      height: value
+      [name]: value
     })
   }
 
   render() {
-    const { name, height, sex, jersey } = this.state;
+    const { name, height, sex, jersey, team } = this.state;
     const { putPlayer, history, player } = this.props;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        putPlayer(player.id, this.state);
-        history.push('/players');
-        this.setState({
-          name: "",
-          height: ""
-        })
+        const { team, ...playerData } = this.state
+        putPlayer(player.id, playerData, team);
+        history.push(`/teams/${team}/players`);
+
       }}>
         {/* <hr /> */}
         <div className='edit-player-div'>
-          <h3 className='edit-player-title'>Edit Player</h3>
-          <div>
+          <h2 className='edit-player-title'>Edit Player</h2>
+          <div >
             <label htmlFor="name">Name:</label>
             <input
               id="id"
               type="text"
+              name='name'
               value={name}
               onChange={this.handleChange}
               className='name-field'
             />
           </div>
-          <div>
+          <div >
             <label htmlFor="height">Height:</label>
             <input
               id="id"
-              type="text"
+              type="number"
+              name="height"
               value={height}
               onChange={this.handleChange}
               className='height-field'
             />
           </div>
-          <div>
+          <div className='sex-field'>
             <label htmlFor="sex">Sex:</label>
             <input
               id="id"
               type="text"
+              name='sex'
               value={sex}
               onChange={this.handleChange}
-              className='edit-sex-field'
+              className='sex-field'
             />
           </div>
-          <div>
+          <div >
             <label htmlFor="jersey">Jersey #:</label>
             <input
               id="id"
-              type="text"
+              type="number"
+              name='jersey'
               value={jersey}
               onChange={this.handleChange}
               className='jersey-field'
             />
+          </div>
+          <div >
+            <label htmlFor="team">Team #:</label>
+            <select
+              id="id"
+              name='team'
+              onChange={this.handleChange}
+              className='team-field'
+            >
+              {
+                this.props.teams.map(team => (
+                  <option value={team.id}>
+                    {team.id}
+                  </option>
+                ))
+              }
+            </select>
           </div>
           <button className='edit-player-submit-button'>Submit</button>
         </div>

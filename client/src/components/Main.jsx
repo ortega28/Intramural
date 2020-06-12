@@ -12,7 +12,7 @@ import basketballImage from '../images/photo-1505666287802-931dc83948e9.jpeg'
 import './Main.css';
 import CreatePlayer from './CreatePlayer';
 import EditPlayer from './EditPlayer';
-import Player from './ShowPlayer.jsx'
+import ShowPlayer from './ShowPlayer.jsx'
 // import PlayerProfile from './PlayerProfile';
 
 export default class Main extends Component {
@@ -23,7 +23,6 @@ export default class Main extends Component {
 
   componentDidMount() {
     this.getTeams();
-    this.getPlayers();
 
   }
 
@@ -37,22 +36,22 @@ export default class Main extends Component {
     this.setState({ players });
   }
 
-  postPlayer = async (playerData) => {
-    const newPlayer = await createPlayer(playerData);
+  postPlayer = async (teamId, playerData) => {
+    const newPlayer = await createPlayer(teamId, playerData);
     this.setState(prevState => ({
       players: [...prevState.players, newPlayer]
     }))
   }
 
-  putPlayer = async (id, playerData) => {
-    const updatedPlayer = await updatePlayer(id, playerData);
+  putPlayer = async (id, playerData, teamId) => {
+    const updatedPlayer = await updatePlayer(id, playerData, teamId);
     this.setState(prevState => ({
       players: prevState.players.map(player => player.id === id ? updatedPlayer : player)
     }))
   }
 
-  destroyPlayer = async (id) => {
-    await deletePlayer(id);
+  destroyPlayer = async (id, teamId) => {
+    await deletePlayer(id, teamId);
     this.setState(prevState => ({
       players: prevState.players.filter(player => player.id !== id)
     }))
@@ -94,8 +93,10 @@ export default class Main extends Component {
                 />
               )} />
 
-              <Route path='/teams/:team_id/players' render={() => (
+              <Route exact path='/teams/:team_id/players' render={(props) => (
                 <ShowPlayers
+                  {...props}
+                  teams={this.state.teams}
                   players={this.state.players}
                   currentUser={this.props.currentUser}
                   destroyPlayer={this.destroyPlayer}
@@ -116,7 +117,9 @@ export default class Main extends Component {
               <Route path='/new/player' render={(props) => (
                 <CreatePlayer
                   {...props}
-                  postPlayer={this.postPlayer} />
+                  postPlayer={this.postPlayer}
+                  teams={this.state.teams}
+                />
               )} />
 
               <Route path='/player/:id/edit' render={(props) => {
@@ -124,14 +127,15 @@ export default class Main extends Component {
                 const player = this.state.players.find(player => player.id === parseInt(playerId));
                 return <EditPlayer
                   {...props}
+                  teams={this.state.teams}
                   player={player}
                   putPlayer={this.putPlayer}
                 />
               }} />
 
-              <Route exact path='/player/:id' render={(props) => {
+              <Route exact path='/teams/:team_id/players/:id' render={(props) => {
                 const playerId = props.match.params.id;
-                return <Player
+                return <ShowPlayer
                   playerId={playerId}
                   currentUser={this.props.currentUser}
                 />
