@@ -13,7 +13,7 @@ function Sports() {
       </div>
       <div className='sports-soccer-div'>
         <img src={soccerImage} alt="Soccer" className='sports-soccer-image' />
-        <Link to='/soccer' className='sports-soccer-link'>Soccer</Link>
+        <Link to='/teams' className='sports-soccer-link'>Soccer</Link>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getOnePlayer } from '../services/players';
+import './ShowPlayer.css'
 
 export default class ShowPlayer extends Component {
 
@@ -23,10 +24,10 @@ export default class ShowPlayer extends Component {
         {
           player && (
             <>
-              <h1>Name: {player.name}</h1>
-              <h3>Height: {player.height} inches</h3>
-              <h3>Sex: {player.sex}</h3>
-              <h3>Jersey #: {player.jersey}</h3>
+              <h1 className='show-player-name'>Name: {player.name}</h1>
+              <h3 className='show-player-height'>Height: {player.height} inches</h3>
+              <h3 className='show-player-sex'>Sex: {player.sex}</h3>
+              <h3 className='show-player-jersey'>Jersey #: {player.jersey}</h3>
             </>
           )
         }
