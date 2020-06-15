@@ -1,6 +1,12 @@
+.show-players-container{
+display: flex;
+flex-direction: column;
+}
+
 .players-title {
   margin-left: 20px;
   font-size: 50px;
+  margin-top: ;
 }
 .player-name {
   text-decoration: none;
@@ -66,5 +72,38 @@ margin-top: 10px;
 .create-button:hover {
   background-color: lightgreen;
   opacity: 1;
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { 
+  .players-title{
+   text-align: center;
+  }
+  .player-name-div {
+    text-decoration: none;
+    color: black;
+    transition: ease-out .1s;
+    font-size: 30px;
+    text-align: center;
+  }
+  .edit-delete-button-div {
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    }
+
+    .create-button-div {
+      
+      font-size: large;
+      
+      border-radius: 3px;
+      padding: 5px 10px 5px 10px;
+      opacity: 0.9;
+      transition: 0.4s;
+      margin-bottom: 50px;
+      text-align: center;
+    }
 }
 
