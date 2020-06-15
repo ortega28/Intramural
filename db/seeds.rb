@@ -3,10 +3,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 Team.destroy_all
 
@@ -19,6 +15,8 @@ User.destroy_all
 @team2 = Team.create!(name: 'Warriors', user: @user, sport_type: 'soccer')
 @team3 = Team.create!(name: 'Tigers', user: @user, sport_type: 'basketball')
 @team4 = Team.create!(name: 'Terriers', user: @user, sport_type: 'soccer')
+@team5 = Team.create!(name: 'Eagles', user: @user, sport_type: 'basketball')
+@team6 = Team.create!(name: 'Dire Wolves', user: @user, sport_type: 'soccer')
 
 @victoria = Player.create!(user: @user, team: @team1, name: 'Victoria', height: 66, sex: 'Female', jersey: 4)
 @alex = Player.create!(user: @user, team: @team1, name: 'Alex', height: 73, sex: 'Male', jersey: 28)
@@ -56,6 +54,20 @@ User.destroy_all
 @oliver = Player.create!(user: @user, team: @team4, name: 'Oliver', height: 71, sex: 'Male', jersey: 10)
 @ben = Player.create!(user: @user, team: @team4, name: 'Ben', height: 72, sex: 'Male', jersey: 2)
 
-# Team.create!(name: 'Team 1', user: @user, players: [@victoria, @alex, @raf, @andrew])
+@liana = Player.create!(user: @user, team: @team5, name: 'Liana', height: 66, sex: 'Female', jersey: 4)
+@elijah = Player.create!(user: @user, team: @team5, name: 'Elijah', height: 73, sex: 'Male', jersey: 28)
+@lucas = Player.create!(user: @user, team: @team5, name: 'Lucas', height: 71, sex: 'Male', jersey: 9)
+@mason = Player.create!(user: @user, team: @team5, name: 'Mason', height: 72, sex: 'Male', jersey: 2)
+@ann = Player.create!(user: @user, team: @team5, name: 'Ann', height: 66, sex: 'Female', jersey: 5)
+@logan = Player.create!(user: @user, team: @team5, name: 'Logan', height: 73, sex: 'Male', jersey: 29)
+@ethan = Player.create!(user: @user, team: @team5, name: 'Ethan', height: 71, sex: 'Male', jersey: 10)
+@jacob = Player.create!(user: @user, team: @team5, name: 'Jacob', height: 72, sex: 'Male', jersey: 2)
 
-# Team.create!(name: 'Team 2', user: @user, players: [@elizabeth, @dan, @trish, @chris])
+@aria = Player.create!(user: @user, team: @team6, name: 'Aria', height: 66, sex: 'Female', jersey: 4)
+@jon = Player.create!(user: @user, team: @team6, name: 'Jon', height: 73, sex: 'Male', jersey: 28)
+@rob = Player.create!(user: @user, team: @team6, name: 'rob', height: 71, sex: 'Male', jersey: 9)
+@bran = Player.create!(user: @user, team: @team6, name: 'Bran', height: 72, sex: 'Male', jersey: 2)
+@sansa = Player.create!(user: @user, team: @team6, name: 'Sansa', height: 66, sex: 'Female', jersey: 5)
+@rickon = Player.create!(user: @user, team: @team6, name: 'Rickon', height: 73, sex: 'Male', jersey: 29)
+@catlyn = Player.create!(user: @user, team: @team6, name: 'Catlyn', height: 71, sex: 'Male', jersey: 10)
+@ned = Player.create!(user: @user, team: @team6, name: 'Ned', height: 72, sex: 'Male', jersey: 2)
