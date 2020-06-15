@@ -58,3 +58,15 @@
 .header-login-button:hover, .header-signup-button:hover {
   text-decoration: underline;
 }
+
+.home, .sports {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: ease-out .2s;
+  font-size: 20px;
+}
+.home:hover, .sports:hover{
+  color: salmon;
+  opacity: 1;
+}

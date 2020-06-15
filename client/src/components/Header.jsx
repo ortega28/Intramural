@@ -6,6 +6,10 @@ function Header(props) {
   return (
     <div className='header-div'>
       <div>
+        <Link to='/' className='home'>Home</Link>
+        <Link to='/sports' className='sports'>Sports</Link>
+      </div>
+      <div>
         <Link to='/' className='header-title'>
           <h1 className='h1-title'>Intramural League</h1>
         </Link>
@@ -15,7 +19,10 @@ function Header(props) {
           props.currentUser
             ?
             // <>Hello, {props.currentUser.username}<button onClick={props.handleLogout} className='header-logout-button'>Logout</button></>
+
             <div className='header-greeting'>Hello, {props.currentUser.username}<button onClick={props.handleLogout} className='header-logout-button'>Logout</button></div>
+
+
             :
             // <Link to='/user/login'>Login/Signup</Link>
             <>
@@ -23,17 +30,13 @@ function Header(props) {
               <span>  </span>
               <Link to='/user/signup' className='header-signup-button'>Sign Up</Link>
             </>
+
         }
-        {/* <hr /> */}
-        {
-          // props.currentUser && (
-          //   <nav>
-          //     <NavLink to="/sports">Sports</NavLink>
-          //     <NavLink to="/teams">Teams</NavLink>
-          //   </nav>
-          // )
-        }
+
+
+
       </div>
+
     </div>
   )
 }

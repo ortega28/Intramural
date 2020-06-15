@@ -14,7 +14,7 @@ export default function ShowPlayers(props) {
 
   return (
     <>
-      <hr />
+      {/* <hr /> */}
       <h3 className='players-title'>Players</h3>
       {
         players.map(player => (
@@ -41,6 +41,7 @@ export default function ShowPlayers(props) {
       <br />
 
       <Link to='/new/player'><button className='create-button'>Create</button></Link>
+
     </>
   )
 }
