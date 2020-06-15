@@ -13,7 +13,6 @@ export default class CreatePlayer extends Component {
   handleChange = (e) => {
 
     const { name, value } = e.target;
-    console.log(name)
     this.setState({
       [name]: value
     })

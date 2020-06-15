@@ -32,7 +32,6 @@ export default class Main extends Component {
 
   getPlayers = async (teamId) => {
     const players = await getAllPlayers(teamId);
-    console.log(players)
     this.setState({ players });
   }
 
@@ -67,7 +66,6 @@ export default class Main extends Component {
 
 
   render() {
-    console.log(this.state.players)
     return (
       <div className='main-component'>
         <>

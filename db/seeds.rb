@@ -15,9 +15,10 @@ Player.destroy_all
 User.destroy_all
 
 @user = User.create!(username: 'Alex', email: 'alex@gmail.com', password: '123456')
-@team1 = Team.create!(name: 'Team 1', user: @user, sport_type: 'basketball')
-@team2 = Team.create!(name: 'Team 2', user: @user, sport_type: 'soccer')
-@team3 = Team.create!(name: 'Team 3', user: @user, sport_type: 'basketball')
+@team1 = Team.create!(name: 'Raiders', user: @user, sport_type: 'basketball')
+@team2 = Team.create!(name: 'Warriors', user: @user, sport_type: 'soccer')
+@team3 = Team.create!(name: 'Tigers', user: @user, sport_type: 'basketball')
+@team4 = Team.create!(name: 'Terriers', user: @user, sport_type: 'soccer')
 
 @victoria = Player.create!(user: @user, team: @team1, name: 'Victoria', height: 66, sex: 'Female', jersey: 4)
 @alex = Player.create!(user: @user, team: @team1, name: 'Alex', height: 73, sex: 'Male', jersey: 28)
@@ -45,6 +46,15 @@ User.destroy_all
 @tony = Player.create!(user: @user, team: @team3, name: 'Tony', height: 73, sex: 'Male', jersey: 29)
 @lyle = Player.create!(user: @user, team: @team3, name: 'Lyle', height: 71, sex: 'Male', jersey: 10)
 @dave = Player.create!(user: @user, team: @team3, name: 'Dave', height: 72, sex: 'Male', jersey: 2)
+
+@rebecca = Player.create!(user: @user, team: @team4, name: 'Rebecca', height: 66, sex: 'Female', jersey: 4)
+@liam = Player.create!(user: @user, team: @team4, name: 'Liam', height: 73, sex: 'Male', jersey: 28)
+@noah = Player.create!(user: @user, team: @team4, name: 'Noah', height: 71, sex: 'Male', jersey: 9)
+@will = Player.create!(user: @user, team: @team4, name: 'Will', height: 72, sex: 'Male', jersey: 2)
+@grace = Player.create!(user: @user, team: @team4, name: 'Grace', height: 66, sex: 'Female', jersey: 5)
+@james = Player.create!(user: @user, team: @team4, name: 'James', height: 73, sex: 'Male', jersey: 29)
+@oliver = Player.create!(user: @user, team: @team4, name: 'Oliver', height: 71, sex: 'Male', jersey: 10)
+@ben = Player.create!(user: @user, team: @team4, name: 'Ben', height: 72, sex: 'Male', jersey: 2)
 
 # Team.create!(name: 'Team 1', user: @user, players: [@victoria, @alex, @raf, @andrew])
 
