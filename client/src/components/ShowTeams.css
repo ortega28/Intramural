@@ -1,5 +1,6 @@
 .show-teams-title {
   margin-left: 5vw;
+  font-size: 50px;
 }
 .team-name-div {
   margin-top: 10px;
@@ -12,6 +13,7 @@
   color: black;
   opacity: 0.9;
   transition: 0.4s;
+  font-size: 40px;
 }
 
 .show-teams-team-name:hover {
