@@ -94,8 +94,8 @@ export default class CreatePlayer extends Component {
             >
               {
                 this.props.teams.map(team => (
-                  <option value={team.id}>
-                    {team.id}
+                  <option value={team.name}>
+                    {team.name}
                   </option>
                 ))
               }
