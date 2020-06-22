@@ -1,3 +1,6 @@
+Link to site
+https://intramural-league.netlify.app/
+
 # Intramural
 This is a student project that uses Ruby on Rails and React to create an intramural sports league website
 
@@ -7,7 +10,7 @@ _**Intramural League** is a web application that uses Ruby on rails in the back 
 
 ## MVP
 
-This website should have CRUD functionality on the front and back end. Users should be able to log in and see which teams have which players for which sports.
+This website should have CRUD functionality on the front and back end. Users should be able to log in and see which teams have which players for which sports. Only the admin can edit or delete players.
 
 
 
